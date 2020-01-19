@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/libra/catkin_ws/src/masiro_arm_config/urdf/masiro_arm.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/masiro_arm.srdf
+  CONFIG:
+    author_name: Libra
+    author_email: ros@libra.com
+    generated_timestamp: 1579425951

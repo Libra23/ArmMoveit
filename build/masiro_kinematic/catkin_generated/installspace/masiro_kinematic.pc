@@ -1,0 +1,8 @@
+prefix=/home/libra/masiro_ws/moveit_ws/install
+
+Name: masiro_kinematic
+Description: Description of masiro_kinematic
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/libra/masiro_ws/moveit_ws/install/lib 
+Requires: 

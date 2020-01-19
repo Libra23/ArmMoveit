@@ -1,0 +1,1 @@
+/home/libra/masiro_ws/moveit_ws/devel/.private/masiro_kinematic/share/masiro_kinematic/cmake/masiro_kinematicConfig-version.cmake

@@ -1,0 +1,3 @@
+Symlinking /home/libra/masiro_ws/moveit_ws/devel/share/masiro_arm_config/cmake/masiro_arm_configConfig.cmake
+Symlinking /home/libra/masiro_ws/moveit_ws/devel/share/masiro_arm_config/cmake/masiro_arm_configConfig-version.cmake
+Symlinking /home/libra/masiro_ws/moveit_ws/devel/lib/pkgconfig/masiro_arm_config.pc

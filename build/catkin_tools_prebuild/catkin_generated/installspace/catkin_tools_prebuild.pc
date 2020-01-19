@@ -1,0 +1,8 @@
+prefix=/home/libra/masiro_ws/moveit_ws/install
+
+Name: catkin_tools_prebuild
+Description: Description of catkin_tools_prebuild
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/libra/masiro_ws/moveit_ws/install/lib 
+Requires: 

@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_94544/fast"
+/usr/bin/make -f CMakeFiles/cmTC_94544.dir/build.make CMakeFiles/cmTC_94544.dir/build
+make[1]: Entering directory '/home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94544.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_94544.dir/CheckSymbolExists.c.o   -c /home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_94544
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94544.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_94544.dir/CheckSymbolExists.c.o  -o cmTC_94544 
+CMakeFiles/cmTC_94544.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_94544.dir/build.make:97: recipe for target 'cmTC_94544' failed
+make[1]: *** [cmTC_94544] Error 1
+make[1]: Leaving directory '/home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_94544/fast' failed
+make: *** [cmTC_94544/fast] Error 2
+
+File /home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1172a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1172a.dir/build.make CMakeFiles/cmTC_1172a.dir/build
+make[1]: Entering directory '/home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1172a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1172a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1172a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1172a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_1172a.dir/CheckFunctionExists.c.o  -o cmTC_1172a -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1172a.dir/build.make:97: recipe for target 'cmTC_1172a' failed
+make[1]: *** [cmTC_1172a] Error 1
+make[1]: Leaving directory '/home/libra/masiro_ws/moveit_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1172a/fast' failed
+make: *** [cmTC_1172a/fast] Error 2
+
+

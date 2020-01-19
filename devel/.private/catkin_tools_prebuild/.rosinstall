@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/libra/masiro_ws/moveit_ws/devel/.private/catkin_tools_prebuild/setup.sh

@@ -1,0 +1,188 @@
+<robot name="masiro_arm">
+    <material name="red">
+        <color rgba="1.0 0.0 0.0 2.0" />
+    </material>
+    <material name="green">
+        <color rgba="0.0 1.0 0.0 2.0" />
+    </material>
+    <material name="blue">
+        <color rgba="0.0 0.0 1.0 2.0" />
+    </material>
+    <link name="base_link" />
+    <joint name="joint0" type="fixed">
+        <parent link="base_link" />
+        <child link="link0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <limit lower="-1.5" upper="1.5" effort="0" velocity="0" />
+    </joint>
+    <link name="link0">
+        <visual>
+            <geometry>
+                <box size="0.01 0.09 0.01" />
+            </geometry>
+            <origin xyz="0 0.045 0" rpy="0 0 0" />
+            <material name="red" />
+        </visual>
+    </link>
+    <joint name="joint1" type="revolute">
+        <parent link="link0" />
+        <child link="link1" />
+        <origin xyz="0 0.09 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.5" upper="1.5" effort="0" velocity="0" />
+    </joint>
+    <link name="link1">
+        <visual>
+            <geometry>
+                <box size="0.01 0.09 0.01" />
+            </geometry>
+            <origin xyz="0 0.045 0" rpy="0 0 0" />
+            <material name="red" />
+        </visual>
+    </link>
+    <joint name="joint2" type="revolute">
+        <parent link="link1" />
+        <child link="link2" />
+        <origin xyz="0 0.09 0" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit lower="0" upper="3.1415" effort="0" velocity="0" />
+    </joint>
+    <link name="link2">
+        <visual>
+            <geometry>
+                <box size="0.01 0.01 0.09" />
+            </geometry>
+            <origin xyz="0 0 -0.045" rpy="0 0 0" />
+            <material name="red" />
+        </visual>
+    </link>
+    <joint name="joint3" type="revolute">
+        <parent link="link2" />
+        <child link="link3" />
+        <origin xyz="0 0 -0.09" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.5" upper="1.5" effort="0" velocity="0" />
+    </joint>
+    <link name="link3">
+        <visual>
+            <geometry>
+                <box size="0.01 0.01 0.09" />
+            </geometry>
+            <origin xyz="0 0 -0.045" rpy="0 0 0" />
+            <material name="red" />
+        </visual>
+    </link>
+    <joint name="joint4" type="revolute">
+        <parent link="link3" />
+        <child link="link4" />
+        <origin xyz="0 0 -0.09" rpy="0 0 0" />
+        <axis xyz="0 -1 0" />
+        <limit lower="0" upper="3.1415" effort="0" velocity="0" />
+    </joint>
+    <link name="link4">
+        <visual>
+            <geometry>
+                <box size="0.01 0.01 0.09" />
+            </geometry>
+            <origin xyz="0 0 -0.045" rpy="0 0 0" />
+            <material name="red" />
+        </visual>
+    </link>
+    <joint name="joint5" type="revolute">
+        <parent link="link4" />
+        <child link="link5" />
+        <origin xyz="0 0 -0.09" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.5" upper="1.5" effort="0" velocity="0" />
+    </joint>
+    <link name="link5">
+        <visual>
+            <geometry>
+                <box size="0.01 0.01 0.09" />
+            </geometry>
+            <origin xyz="0 0 -0.045" rpy="0 0 0" />
+            <material name="red" />
+        </visual>
+    </link>
+    <joint name="joint6" type="revolute">
+        <parent link="link5" />
+        <child link="link6" />
+        <origin xyz="0 0 -0.09" rpy="0 0 0" />
+        <limit lower="-1.5" upper="1.5" effort="0" velocity="0" />
+    </joint>
+    <link name="link6">
+        <visual>
+            <geometry>
+                <box size="0.03 0.001 0.03" />
+            </geometry>
+            <origin xyz="0 0 -0.015" rpy="0 0 0" />
+            <material name="red" />
+        </visual>
+    </link>
+    
+<transmission name="trans_joint1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint4_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint5_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint6">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint6_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
